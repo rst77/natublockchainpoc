@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Blockchain Natura - Demo</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="../css/style.css">
+      <script type="module" src="../js/script.js"></script>
+  
+</head>
+
+<body>
+  
+<div class="modal-wrap">
+  <div class="modal-header"><span class="is-active"></span><span></span><span></span><span></span></div>
+  <div class="modal-bodies">
+    <div class="modal-body modal-body-step-1 is-showing">
+      <div class="title">Passo 1 - Colheita</div>
+      <div class="description">Enviar sacas para a cooperativa.</div>
+      <form>
+        <input id="edtEtiquetaFamilia" type="text" name="name" placeholder="Etiqueta da familia">
+        <input id="edtFamilia" type="text" name="name" placeholder="Familia(Ex: 1,2)">
+        <input id="edtPesoSaca" class="fname" type="text" name="name" placeholder="Peso da saca">
+        <input id="edtTipoProduto" class="fname" type="text" name="name" placeholder="Tipo do produto">
+        <input id="edtCodigoCooperativa" class="fname" type="text" name="name" placeholder="Cooperativa">
+        <div class="text-center">
+          <div class="btn" type="button" onclick="cadastrarSacas()">Enviar !</div>
+          <br>
+          <br>
+          <div class="button" id="btnproximo1" style="pointer-events:all;">Próximo passo</div>
+          <h4 id="textStatus1"></h4>
+        </div>
+      </form>
+    </div>
+    <div class="modal-body modal-body-step-2">
+      <div class="title">Passo 2 - Processar Item</div>
+      <div class="description">Enviar da cooperativa para a processadora.</div>
+      <input id="edtCodigoLote" type="text" name="name" placeholder="Codigo do lote">
+      <input id="edtEtiquetaCooperativa" class="fname" type="text" name="name" placeholder="Etiqueta Cooperativa">
+      <input id="edtQuantidadeSacas" class="fname" type="text" name="name" placeholder="Quantidade Sacas">
+      <input id="edtTipoProduto" class="fname" type="text" name="name" placeholder="Tipo Produto">
+      <input id="edtListaEtiquetasFamilia" class="fname" type="text" name="name" placeholder="Etiquetas de Familia utilizadas(separe por vírgula)">
+        <div class="text-center fade-in">
+          <div class="btn" type="button" onclick="cadastrarProcessar()">Enviar !</div>
+          <br>
+          <br>
+          <div class="button" id="btnproximo2" style="pointer-events:all;">Próximo passo</div>
+          <h4 id="textStatus2"></h4>
+        </div>
+      </form>
+    </div>
+    <div class="modal-body modal-body-step-3">
+      <div class="title">Passo 3 - Item processado</div>
+      <div class="description">Enviar da processadora para a Natura.</div>
+      <input id="edtCodigoLoteProcessado" type="text" name="name" placeholder="Codigo do lote">
+      <input id="edtQuantidade3" class="fname" type="text" name="name" placeholder="Quantidade">
+      <input id="edtTipoProduto3" class="fname" type="text" name="name" placeholder="Tipo Produto">
+        <div class="text-center fade-in">
+          <div class="btn" type="button" onclick="cadastrarProcessado()">Enviar !</div>
+          <br>
+          <br>
+          <div class="button" id="btnproximo3" style="pointer-events:all;">Próximo passo</div>
+          <h4 id="textStatus3"></h4>
+        </div>
+      </form>
+    </div>
+    <!-- <div class="modal-body modal-body-step-4">
+      <div class="title">Passo 4 - Industrializacão</div>
+      <div class="description">Natura recebe e finaliza em unidades de produto</div>
+      <input id="edtCodigoLoteNatura" type="text" name="name" placeholder="Codigo do lote Natura">
+      <input id="edtQuantidade" class="fname" type="text" name="name" placeholder="Quantidade">
+      <input id="edtTipoProduto" class="fname" type="text" name="name" placeholder="Tipo Produto">
+      <input id="edtCodigoLoteProcessamento" class="fname" type="text" name="name" placeholder="Codigo lote do processamento">
+        <div class="text-center fade-in">
+          <div class="btn" type="button" onclick="cadastrarNatura()">Enviar !</div>
+          <br>
+          <br>
+          <div class="button" id="btnproximo4" style="pointer-events:all;">Próximo passo</div>
+          <h4 id="textStatus4"></h4>
+        </div>
+      </form>
+    </div> -->
+    <div class="modal-body modal-body-step-5">
+      <div class="title">Passo 5 - Consulta</div>
+      <div class="description">Consultar histórico do "Lote Natura"</div>
+      <input id="edtCodigoNaturaBusca" type="text" name="name" placeholder="Codigo do lote Natura">
+        <div class="text-center fade-in">
+          <div class="btn" type="button" onclick="buscar()">Consultar histórico !</div>
+          <br>
+          <br>
+          <!--<div class="button" id="btnproximo4" style="pointer-events:all;">Próximo passo</div>-->
+          <h4 id="textStatus5"></h4>
+        </div>
+      <h4>ETAPA 1 - FAMÍLIAS -> COOPERATIVAS</h4>
+      <ul id="listaetapa1"></ul>  
+      <br>
+      <h4>ETAPA 2 - COOPERATIVAS -> PROCESSADORA</h4>
+      <ul id="listaetapa2"></ul>  
+      <br>
+      <h4>ETAPA 3 - PROCESSADORA -> NATURA</h4>
+      <ul id="listaetapa3"></ul>  
+      <br>
+      <h4>ETAPA 4 - INDUSTRIALIZACÃO</h4>
+      <ul id="listaetapa4"></ul>  
+      </form>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <div class="rerun-button">ReRun</div>
+</div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+    <script src="../js/indexanimation.js"></script>
+    
+
+</body>
+</html>
