@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Blockchain Natura - Demo</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="../css/style.css">
+      <script type="module" src="../js/script.js"></script>
+  
+</head>
+<script>
+
+
+//let url = new URL('http://www.test.com/t.html?a=1&b=3&c=m2-m3-m4-m5');
+let params = (new URL(document.location)).searchParams;
+console.log(params.get("loteNatura"));  // outputs "m2-m3-m4-m5"
+
+var lotenatura = params.get("loteNatura").toString();
+
+window.onload = function(){
+  if(lotenatura != null){
+    window.buscarQR(lotenatura);
+  }
+};
+
+
+</script>
+
+<body>
+  
+<div class="modal-wrap">
+  <div class="modal-header"><span class="is-active"></span></div>
+  <div class="modal-bodies">
+    <div class="modal-body modal-body-step-1 is-showing">
+      <div class="title">Passo 4 - Consulta QRCode</div>
+      <div class="description">Consultar histórico do "Lote Natura"</div>
+      <!-- <input id="edtCodigoNaturaBusca" type="text" name="name" placeholder="Codigo do lote Natura"> -->
+        <div class="text-center fade-in">
+          <!-- <div class="btn" type="button" onclick="buscar()">Consultar histórico !</div> -->
+          <br>
+          <br>
+          <h4 id="textStatus5"></h4>
+        </div>
+      <h4>ETAPA 1 - FAMÍLIAS -> COOPERATIVAS</h4>
+      <ul id="listaetapa1"></ul>  
+      <br>
+      <h4>ETAPA 2 - COOPERATIVAS -> PROCESSADORA</h4>
+      <ul id="listaetapa2"></ul>  
+      <br>
+      <h4>ETAPA 3 - PROCESSADORA -> NATURA</h4>
+      <ul id="listaetapa3"></ul>  
+      <br>
+      <h4>ETAPA 4 - INDUSTRIALIZACÃO</h4>
+      <ul id="listaetapa4"></ul>  
+      </form>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <div class="rerun-button">ReRun</div>
+</div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+    <script src="../js/indexanimation.js"></script>
+    
+
+</body>
+</html>
