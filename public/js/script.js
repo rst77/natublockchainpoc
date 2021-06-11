@@ -197,7 +197,7 @@ window.cadastrarProcessado = function cadastrarProcessado() {
                 redirect: 'follow'
                 };
 
-                fetch("https://oic-idvkxij5qkne-gr.integration.ocp.oraclecloud.com:443/ic/api/integration/v1/flows/rest/INTEGRACAOPOCNAT_1622826459/1.0/", requestOptionsOIC)
+                fetch("https://oic-idvkxij5qkne-gr.integration.ocp.oraclecloud.com:443/ic/api/integration/v1/flows/rest/INTEGRACAOPOCNAT_2/1.0/", requestOptionsOIC)
                 .then(response => response.text())
                 .then(result => console.log(result))
                 .catch(error => console.log('error', error));
@@ -590,73 +590,12 @@ function getFamiliasQR(listaEtiquetasFamiliaArr, i) {
                 listaetapa1.appendChild(breakline);
                 listaetapa1.appendChild(localchildlist);
 
-                // //INSERT NA BLOCKCHAIN TABLE - Sacas
-                // var rawblocktable = JSON.stringify({
-                //     "etiquetafamilia": EtiquetaFamilia,
-                //     "familia": Familia,
-                //     "dataregistro": DataRegistro,
-                //     "pesosaca": PesoSaca,
-                //     "tipoproduto": TipoProduto,
-                //     "codigocooperativa": CodigoCooperativa
-                // });
-
-                // var requestOptions_blocktable = {
-                //     method: 'POST',
-                //     headers: myHeaders,
-                //     body: rawblocktable,
-                //     redirect: 'follow'
-                // };
-
-                // fetch(endpoint_sacas, requestOptions_blocktable)
-                //     .then(response => response.text())
-                //     .then(result => console.log(result))
-                //     .catch(error => console.log('error', error));
-
 
             }
 
         })
         .catch(error => console.log('error', error));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 window.buscarQR = async function buscarQR(loteNatura) {
@@ -731,27 +670,6 @@ window.buscarQR = async function buscarQR(loteNatura) {
 
             listaetapa4.appendChild(childlist);
 
-            // //INSERT NA BLOCKCHAIN TABLE
-            // var rawblocktable = JSON.stringify({
-            //     "codigolotenatura": CodigoLoteNatura,
-            //     "dataregistro": DataRegistro,
-            //     "quantidade": parseInt(Quantidade, 10),
-            //     "tipoproduto": TipoProduto,
-            //     "codigoloteprocessamento": CodigoLoteProcessamento
-            // });
-
-            // var requestOptions_blocktable = {
-            //     method: 'POST',
-            //     headers: myHeaders,
-            //     body: rawblocktable,
-            //     redirect: 'follow'
-            // };
-
-            // fetch(endpoint_lotesnatura, requestOptions_blocktable)
-            //     .then(response => response.text())
-            //     .then(result => console.log(result))
-            //     .catch(error => console.log('error', error));
-
 
             //BUSCAR PELO CODIGO LOTE PROCESSAMENTO - LotesNatura
             var raw = JSON.stringify({
@@ -800,27 +718,6 @@ window.buscarQR = async function buscarQR(loteNatura) {
                     childlist.appendChild(item4);
 
                     listaetapa3.appendChild(childlist);
-
-                    // //INSERT NA BLOCKCHAIN TABLE - LotesProcessadora
-                    // var rawblocktable = JSON.stringify({
-                    //     "codigoloteprocessado": CodigoLoteProcessado,
-                    //     "dataregistro": DataRegistro,
-                    //     "quantidade": parseInt(Quantidade, 10),
-                    //     "tipoproduto": TipoProduto
-                    // });
-
-                    // var requestOptions_blocktable = {
-                    //     method: 'POST',
-                    //     headers: myHeaders,
-                    //     body: rawblocktable,
-                    //     redirect: 'follow'
-                    // };
-
-                    // fetch(endpoint_lotesprocessadora, requestOptions_blocktable)
-                    //     .then(response => response.text())
-                    //     .then(result => console.log(result))
-                    //     .catch(error => console.log('error', error));
-
 
 
                     //BUSCAR PELO CODIGO LOTE DAS COOPERATIVAS
@@ -881,28 +778,6 @@ window.buscarQR = async function buscarQR(loteNatura) {
 
                                 listaetapa2.appendChild(breakline);
                                 listaetapa2.appendChild(childlist);
-
-                                // //INSERT NA BLOCKCHAIN TABLE - LotesCooperativas
-                                // var rawblocktable = JSON.stringify({
-                                //     "codigolote": CodigoLote,
-                                //     "dataregistro": DataRegistro,
-                                //     "etiquetacooperativa": EtiquetaCooperativa,
-                                //     "quantidadesacas": parseInt(QuantidadeSacas, 10),
-                                //     "tipoproduto": TipoProduto,
-                                //     "listaetiquetasfamilia": ListaEtiquetasFamilia
-                                // });
-
-                                // var requestOptions_blocktable = {
-                                //     method: 'POST',
-                                //     headers: myHeaders,
-                                //     body: rawblocktable,
-                                //     redirect: 'follow'
-                                // };
-
-                                // fetch(endpoint_lotescooperativas, requestOptions_blocktable)
-                                //     .then(response => response.text())
-                                //     .then(result => console.log(result))
-                                //     .catch(error => console.log('error', error));
 
 
 
