@@ -1,5 +1,6 @@
 var variables = {
-    url: "https://blockhubiteam-ladcsteam-iad.blockchain.ocp.oraclecloud.com:7443/restproxy",
+    //url: "https://blockhubiteam-ladcsteam-iad.blockchain.ocp.oraclecloud.com:7443/restproxy",
+    url: "http://129.213.202.34/restproxy",
     channel: "testechannel14",
     chaincodename: "oabcs-produtotrack",
     chaincodeVer: "v39",
